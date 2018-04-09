@@ -1,4 +1,4 @@
-# [<challenge name>](https://www.codewars.com/kata/<challenge name>)
+# [Binary Addition](https://www.codewars.com/kata/binary-addition)
 
 Explain the challenge as completely & clearly as you can.
 
