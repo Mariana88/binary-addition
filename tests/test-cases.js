@@ -2,8 +2,20 @@ tests({
 
   // Fill this in with your test cases
 
-  '': function() {
-    eq("", your_solution(""));
+  'two numbers starting with 0': function() {
+    eq("110", binaryAddition(03, 03));
+  },
+  'one of them starts with 0': function() {
+    eq("100", binaryAddition(00002, 02));
+  },
+  'two positive numbers': function() {
+    eq("100", binaryAddition(2, 2));
+  },
+  'two negative numbers': function() {
+    eq("-100", binaryAddition(-2, -2));
+  },
+  'one positive one negative': function() {
+    eq("-1", binaryAddition(2, -3));
   }
 
 });

@@ -1,14 +1,25 @@
 # [Binary Addition](https://www.codewars.com/kata/binary-addition)
 
-Explain the challenge as completely & clearly as you can.
+"Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+The binary number returned should be a string."
 
-_function name_: Function
-* Args: (how many args does this function take?)
-  * (List each arg, it's type, and it's purpose)
-* Return: (what type does this function return?)
-  * (Describe the return value)
-* Behavior: (What does this function do?)
+* What is binary addition?
+Summing up two numbers expressed in binary. A binary is a number expressed in base 2
 
+calculating the binary: "Find the largest power of 2 you can subtract from your first number (left to right): put a 1 in that power's place and subtract the power. Proceed with the remainder untill the "0 power of 2" is reached. When you cannot subtract put a 0 in that power."
+
+adding  binaries: like you would add a decimal, start from right to left. 1 + 1 = 10 (keep 0 and throw the 1 to the next column)
+
+(See picture and add a thorough resource)
+
+
+binaryAddition: Function
+* Args: 2
+  * num1: Number
+  * num2: Number
+* Return: String
+  * string of 0s and 1s
+* Behavior: Takes two numbers and returs a string with their sum in binary
 '''js
 // copy of your polished solution for easy reference.
 '''
@@ -29,12 +40,13 @@ _function name_: Function
 
 ## Input Classifications
 
-What characteristics of your inputs are important for your solution?  
+Assumption: only numbers will be passed. So no need for handling type conversions.
 
-What groupings will you have to consider when building your solution?  
-
-How did you use this information to select your test cases?
-
+Classifications:
+- starting with a 0
+- Negative or not
+- Decimals Vs. whole numbers
+(we want to keep those in mind because of the way JS handles type conversions this may be relevant)
 
 [TOP](#index)
 
