@@ -38,15 +38,21 @@ binaryAddition: Function
 
 ---
 
-## Input Classifications
+## Input Classifications & Strategies
 
 Assumption: only numbers will be passed. So no need for handling type conversions.
 
-Classifications:
+* Classifications:
 - starting with a 0
 - Negative or not
 - Decimals Vs. whole numbers
 (we want to keep those in mind because of the way JS handles type conversions this may be relevant)
+
+* Strategies:
+- add numbers -> convert to binary using an inherent methd -> convert to string
+- add numbers -> convert to binary w/o using pre-built method -> convert to string
+- convert both numbers to binary -> add binaries -> convert to string (either using or not inherent methods)
+
 
 [TOP](#index)
 
@@ -54,7 +60,12 @@ ___
 
 ## Solution Explanation
 
-Explain your solution in detail, however works for you.  Perhaps by using a specific input to illustrate, by describing your strategy, or by including a diagram [directly from Sketchboard.io](https://sketchboard.io/blog/2014/03/06/github-sketchboard.html).
+* Convert input numbers to binary
+step 1) Use a for loop to calculate the highest power of 2 to use (starting from 2 to the power of 0)
+
+step 2) build binary by subtracting the result of '2 to the given power' from the input number (if possible write to string 1 if not possible write 0) , store the remainder for the next subtraction of '2 to the next highest power' (if possible write to string 1 if not possible write 0), and so on untill '2 to the power of 0' is reached.
+
+step 3) Iterate through binary strings to construct a new string based on string index, from the end to the beginning - and applying a logic which computes the right character between a combination of zeros and one (i.e. if 0 and 0 - write 0 ; if 0 and 1 - write 1 ; if 1 and 1 -write 0 and use an extra 1 in the next calculation).
 
 [TOP](#index)
 
@@ -62,7 +73,8 @@ Explain your solution in detail, however works for you.  Perhaps by using a spec
 
 ## Constraints
 
-What constraints did you place on yourself, and why?  Did they end up being helpful or not?
+* Not to use an inherent method to convert to binary
+* Convert to string before adding the numbers
 
 [TOP](#index)
 
