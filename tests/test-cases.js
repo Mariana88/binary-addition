@@ -16,6 +16,12 @@ tests({
   },
   'one positive one negative': function() {
     eq("-1", binaryAddition(2, -3));
+  },
+  'binaries of diff length with an extra': function() {
+    eq("101010", binaryAddition(31, 11));
+  },
+  'binaries of different length with undefined': function() {
+    eq("101010", binaryAddition(27, 68));
   }
 
 });
