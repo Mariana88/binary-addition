@@ -21,7 +21,7 @@ tests({
     eq("101010", binaryAddition(31, 11));
   },
   'binaries of different length with undefined': function() {
-    eq("101010", binaryAddition(27, 68));
+    eq("1011111", binaryAddition(27, 68));
   }
 
 });

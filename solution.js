@@ -2,17 +2,27 @@
 function convertToBinaryStr (num){
     let hP = 0;
     let numStr = '';
-    while (num - Math.pow(2, hP) >= 0){
+    let workNum;
+    if (num>=0){
+        workNum = num;
+    } else {
+        workNum = -(num);
+    }
+    while (workNum - Math.pow(2, hP) >= 0){
         hP++;
     }
+    hP--;
     while (hP>=0){
-        if (num - Math.pow(2, hP) >=0){
+        if (workNum - Math.pow(2, hP) >=0){
         numStr = numStr + 1;
-        num = num - Math.pow(2, hP);
+        workNum = workNum - Math.pow(2, hP);
         } else {
         numStr = numStr + 0;
         }
         hP--;
+    }
+    if (num <0){
+        numStr = "-" + numStr;
     }
     return numStr;
 }
